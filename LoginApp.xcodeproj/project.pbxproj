@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		A85C69632809752B005F9BC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85C69622809752B005F9BC9 /* AppDelegate.swift */; };
 		A85C69652809752B005F9BC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85C69642809752B005F9BC9 /* SceneDelegate.swift */; };
-		A85C69672809752B005F9BC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85C69662809752B005F9BC9 /* ViewController.swift */; };
 		A85C696A2809752B005F9BC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A85C69682809752B005F9BC9 /* Main.storyboard */; };
 		A85C696C2809752C005F9BC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A85C696B2809752C005F9BC9 /* Assets.xcassets */; };
 		A85C696F2809752C005F9BC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A85C696D2809752C005F9BC9 /* LaunchScreen.storyboard */; };
+		A8E181A2280AF8FF00C6A54C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E181A1280AF8FF00C6A54C /* LoginViewController.swift */; };
+		A8E181A4280AF91500C6A54C /* OutputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E181A3280AF91500C6A54C /* OutputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A85C695F2809752B005F9BC9 /* LoginApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85C69622809752B005F9BC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A85C69642809752B005F9BC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A85C69662809752B005F9BC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A85C69692809752B005F9BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A85C696B2809752C005F9BC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A85C696E2809752C005F9BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A85C69702809752C005F9BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8E181A1280AF8FF00C6A54C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A8E181A3280AF91500C6A54C /* OutputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +60,11 @@
 			children = (
 				A85C69622809752B005F9BC9 /* AppDelegate.swift */,
 				A85C69642809752B005F9BC9 /* SceneDelegate.swift */,
-				A85C69662809752B005F9BC9 /* ViewController.swift */,
+				A8E181A1280AF8FF00C6A54C /* LoginViewController.swift */,
+				A8E181A3280AF91500C6A54C /* OutputViewController.swift */,
 				A85C69682809752B005F9BC9 /* Main.storyboard */,
-				A85C696B2809752C005F9BC9 /* Assets.xcassets */,
 				A85C696D2809752C005F9BC9 /* LaunchScreen.storyboard */,
+				A85C696B2809752C005F9BC9 /* Assets.xcassets */,
 				A85C69702809752C005F9BC9 /* Info.plist */,
 			);
 			path = LoginApp;
@@ -138,7 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A85C69672809752B005F9BC9 /* ViewController.swift in Sources */,
+				A8E181A2280AF8FF00C6A54C /* LoginViewController.swift in Sources */,
+				A8E181A4280AF91500C6A54C /* OutputViewController.swift in Sources */,
 				A85C69632809752B005F9BC9 /* AppDelegate.swift in Sources */,
 				A85C69652809752B005F9BC9 /* SceneDelegate.swift in Sources */,
 			);
@@ -293,7 +297,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -323,7 +327,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
