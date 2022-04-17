@@ -42,7 +42,8 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="Nuu-dG-bQV" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Poa-cd-ciC"/>
+                                                    <action selector="loginButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="34f-TZ-G6U"/>
+                                                    <segue destination="Nuu-dG-bQV" kind="presentation" identifier="showOutput" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Poa-cd-ciC"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8bp-se-hMl">
@@ -53,12 +54,18 @@
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Forgot User Name?"/>
+                                                        <connections>
+                                                            <action selector="forgotUsernamePressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="BNn-sH-7AW"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSc-Ve-SId">
                                                         <rect key="frame" x="179" y="0.0" width="169" height="27"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Forgot Password?"/>
+                                                        <connections>
+                                                            <action selector="forgotPasswordPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="L2k-N6-HXx"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -76,6 +83,11 @@
                             <constraint firstItem="1x2-gL-SQE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="pWZ-eU-jRT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="TKq-lD-YLx" id="Pbx-qS-a88"/>
+                        <outlet property="pwTextField" destination="Yax-AN-03g" id="WQ0-48-ivS"/>
+                        <outlet property="unTextField" destination="XoW-A9-x0r" id="LeA-MF-M4h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,7 +129,7 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="logoutButtonPressed" destination="Nuu-dG-bQV" eventType="touchUpInside" id="g2g-n5-7PU"/>
+                                    <action selector="logoutButtonPressed" destination="Nuu-dG-bQV" eventType="touchUpInside" id="Pdq-ZQ-00h"/>
                                 </connections>
                             </button>
                         </subviews>

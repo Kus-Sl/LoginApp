@@ -11,8 +11,12 @@ class OutputViewController: UIViewController {
 
     @IBOutlet weak var welcomeTitle: UILabel!
 
+    var welcomeText: String!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        welcomeTitle.text = "Welcome, " + welcomeText
 
         let backgroundOutputVC = GradientColor()
         backgroundOutputVC.gradientLayer.frame = view.frame
@@ -20,16 +24,12 @@ class OutputViewController: UIViewController {
     }
 
     @IBAction func logoutButtonPressed() {
+        dismiss(animated: true)
     }
 }
 
 class GradientColor {
-
-    var gradientLayer: CAGradientLayer {
-        gradientLayerSet
-    }
-
-    private let gradientLayerSet: CAGradientLayer
+    var gradientLayer = CAGradientLayer()
 
     private let gradientColorTop = UIColor(
         red: 44 / 255,
@@ -46,8 +46,7 @@ class GradientColor {
     ).cgColor
 
     init () {
-        gradientLayerSet = CAGradientLayer()
-        gradientLayerSet.colors = [gradientColorTop, gradientColorBottom]
-        gradientLayerSet.locations = [0.1, 0.9]
+        gradientLayer.colors = [gradientColorTop, gradientColorBottom]
+        gradientLayer.locations = [0.1, 0.9]
     }
 }
