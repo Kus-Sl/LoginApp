@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
 
@@ -18,13 +18,26 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
 
         loginButton.layer.cornerRadius = 15
     }
 
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        super .touchesBegan(touches, with: event)
-//    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if usernameTextField.isEditing {
+            passwordTextField.becomeFirstResponder()
+        } else if passwordTextField.isEditing {
+            loginButtonPressed()
+            performSegue(withIdentifier: "showOutputVC", sender: self)
+        }
+        return true
+    }
 
     @IBAction func loginButtonPressed() {
         checkValidation()
