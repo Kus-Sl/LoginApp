@@ -22,10 +22,6 @@ class OutputViewController: UIViewController {
         backgroundOutputVC.gradientLayer.frame = view.frame
         view.layer.insertSublayer(backgroundOutputVC.gradientLayer, at: 0)
     }
-
-    @IBAction func logoutButtonPressed() {
-        dismiss(animated: true)
-    }
 }
 
 class GradientColor {
