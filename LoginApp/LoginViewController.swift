@@ -24,9 +24,38 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginButton.layer.cornerRadius = 15
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "showOutputVC" else { return }
+        guard let outputVC = segue.destination as? OutputViewController else {
+            return
+        }
+        outputVC.welcomeText = usernameTextField.text
+    }
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super .touchesBegan(touches, with: event)
         view.endEditing(true)
+    }
+
+    @IBAction func loginButtonPressed() {
+        checkValidation()
+    }
+
+    @IBAction func forgotUsernamePressed() {
+        showAlert(title: "Correct username", message: username)
+    }
+
+    @IBAction func forgotPasswordPressed() {
+        showAlert(title: "Correct password", message: password)
+    }
+
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        guard segue.identifier == "showLoginVC" else { return }
+        guard let loginVC = segue.destination as? LoginViewController else {
+            return
+        }
+        loginVC.usernameTextField.text = nil
+        loginVC.passwordTextField.text = nil
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -37,35 +66,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             performSegue(withIdentifier: "showOutputVC", sender: self)
         }
         return true
-    }
-
-    @IBAction func loginButtonPressed() {
-        checkValidation()
-    }
-    
-    @IBAction func forgotUsernamePressed() {
-        showAlert(title: "Correct username", message: username)
-    }
-    
-    @IBAction func forgotPasswordPressed() {
-        showAlert(title: "Correct password", message: password)
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "showOutputVC" else { return }
-        guard let outputVC = segue.destination as? OutputViewController else {
-            return
-        }
-        outputVC.welcomeText = usernameTextField.text
-    }
-
-    @IBAction func unwind(for segue: UIStoryboardSegue) {
-        guard segue.identifier == "showLoginVC" else { return }
-        guard let loginVC = segue.destination as? LoginViewController else {
-            return
-        }
-        loginVC.usernameTextField.text = nil
-        loginVC.passwordTextField.text = nil
     }
 
     private func showAlert(title: String, message: String) {
