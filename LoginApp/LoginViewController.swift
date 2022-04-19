@@ -59,9 +59,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if usernameTextField.isEditing {
+        if textField == usernameTextField {
             passwordTextField.becomeFirstResponder()
-        } else if passwordTextField.isEditing {
+        }
+        if textField == passwordTextField {
             loginButtonPressed()
             performSegue(withIdentifier: "showOutputVC", sender: self)
         }
@@ -75,17 +76,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             preferredStyle: .alert
         )
 
-        let alertAction = UIAlertAction(title: "OK", style: .default)
+        let alertAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.passwordTextField.text = nil
+        }
+
         alert.addAction(alertAction)
         present(alert, animated: true)
     }
 
     private func checkValidation() {
-        guard let checkedUsername = usernameTextField.text else { return }
-        guard let checkedPassword = passwordTextField.text else { return }
-
-        !(checkedUsername == username && checkedPassword == password)
-        ? showAlert(title: "Invalid username or password", message: "Please, enter correct username or password")
-        : nil
+        if !(usernameTextField.text == username
+            && passwordTextField.text == password) {
+            showAlert(title: "Invalid username or password", message: "Please, enter correct username or password")
+        }
     }
 }
