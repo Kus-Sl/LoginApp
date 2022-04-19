@@ -41,28 +41,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         checkValidation()
     }
 
-    @IBAction func forgotUsernamePressed() {
-        showAlert(title: "Correct username", message: username)
-    }
-
-    @IBAction func forgotPasswordPressed() {
-        showAlert(title: "Correct password", message: password)
+    @IBAction func forgotUsernameOrPasswordButtonPressed(_ sender: UIButton) {
+            sender.tag == 0
+        ? showAlert(title: "Correct username", message: username)
+        : showAlert(title: "Correct password", message: password)
     }
 
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        guard segue.identifier == "showLoginVC" else { return }
-        guard let loginVC = segue.destination as? LoginViewController else {
-            return
-        }
-        loginVC.usernameTextField.text = nil
-        loginVC.passwordTextField.text = nil
+        usernameTextField.text = nil
+        passwordTextField.text = nil
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == usernameTextField {
+        switch textField {
+        case usernameTextField:
             passwordTextField.becomeFirstResponder()
-        }
-        if textField == passwordTextField {
+        default:
             loginButtonPressed()
             performSegue(withIdentifier: "showOutputVC", sender: self)
         }
