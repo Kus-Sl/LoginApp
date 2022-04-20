@@ -58,7 +58,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             passwordTextField.becomeFirstResponder()
         default:
             loginButtonPressed()
-            performSegue(withIdentifier: "showOutputVC", sender: self)
+            performSegue(withIdentifier: "showOutputVC", sender: nil)
         }
         return true
     }
@@ -79,8 +79,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     private func checkValidation() {
-        if !(usernameTextField.text == username
-            && passwordTextField.text == password) {
+        if usernameTextField.text != username
+            && passwordTextField.text != password {
             showAlert(title: "Invalid username or password", message: "Please, enter correct username or password")
         }
     }
