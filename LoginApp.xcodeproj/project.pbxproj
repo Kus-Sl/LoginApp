@@ -39,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A85132D72810788000EBBF5D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A85C69682809752B005F9BC9 /* Main.storyboard */,
+				A85C696D2809752C005F9BC9 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		A85C69562809752B005F9BC9 = {
 			isa = PBXGroup;
 			children = (
@@ -58,16 +67,47 @@
 		A85C69612809752B005F9BC9 /* LoginApp */ = {
 			isa = PBXGroup;
 			children = (
-				A85C69622809752B005F9BC9 /* AppDelegate.swift */,
-				A85C69642809752B005F9BC9 /* SceneDelegate.swift */,
-				A8E181A1280AF8FF00C6A54C /* LoginViewController.swift */,
-				A8E181A3280AF91500C6A54C /* OutputViewController.swift */,
-				A85C69682809752B005F9BC9 /* Main.storyboard */,
-				A85C696D2809752C005F9BC9 /* LaunchScreen.storyboard */,
-				A85C696B2809752C005F9BC9 /* Assets.xcassets */,
-				A85C69702809752C005F9BC9 /* Info.plist */,
+				A8CB914628107AD500905B5B /* App */,
+				A8CB914328107A5C00905B5B /* ViewControllers */,
+				A85132D72810788000EBBF5D /* Storyboards */,
+				A8CB914528107AAA00905B5B /* Models */,
+				A8CB914428107A7C00905B5B /* Resources */,
 			);
 			path = LoginApp;
+			sourceTree = "<group>";
+		};
+		A8CB914328107A5C00905B5B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A8E181A1280AF8FF00C6A54C /* LoginViewController.swift */,
+				A8E181A3280AF91500C6A54C /* OutputViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A8CB914428107A7C00905B5B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A85C696B2809752C005F9BC9 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A8CB914528107AAA00905B5B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A8CB914628107AD500905B5B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A85C69622809752B005F9BC9 /* AppDelegate.swift */,
+				A85C69642809752B005F9BC9 /* SceneDelegate.swift */,
+				A85C69702809752C005F9BC9 /* Info.plist */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +333,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5SSHB4KN3U;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LoginApp/Info.plist;
+				INFOPLIST_FILE = LoginApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -323,7 +363,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5SSHB4KN3U;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LoginApp/Info.plist;
+				INFOPLIST_FILE = LoginApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
