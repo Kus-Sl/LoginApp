@@ -25,11 +25,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "showOutputVC" else { return }
-        guard let outputVC = segue.destination as? OutputViewController else {
-            return
+        guard let tabBarController = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarController.viewControllers else { return }
+
+        for viewController in viewControllers {
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.welcomeText = usernameTextField.text
+            }
         }
-        outputVC.welcomeText = usernameTextField.text
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -38,7 +41,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func loginButtonPressed() {
-        checkValidation()
+//        checkValidation()
     }
 
     @IBAction func forgotUsernameOrPasswordButtonPressed(_ sender: UIButton) {
@@ -58,7 +61,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             passwordTextField.becomeFirstResponder()
         default:
             loginButtonPressed()
-            performSegue(withIdentifier: "showOutputVC", sender: nil)
+            performSegue(withIdentifier: "startSession", sender: nil)
         }
         return true
     }

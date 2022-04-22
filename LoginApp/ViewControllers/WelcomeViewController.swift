@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OutputViewController: UIViewController {
+class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var welcomeTitle: UILabel!
 
@@ -18,9 +18,9 @@ class OutputViewController: UIViewController {
 
         welcomeTitle.text = "Welcome, " + welcomeText
 
-        let backgroundOutputVC = GradientColor()
-        backgroundOutputVC.gradientLayer.frame = view.frame
-        view.layer.insertSublayer(backgroundOutputVC.gradientLayer, at: 0)
+        let backgroundWelcomeVC = GradientColor()
+        backgroundWelcomeVC.gradientLayer.frame = view.frame
+        view.layer.insertSublayer(backgroundWelcomeVC.gradientLayer, at: 0)
     }
 }
 
