@@ -23,11 +23,13 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XoW-A9-x0r">
                                         <rect key="frame" x="0.0" y="0.0" width="348" height="34"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yax-AN-03g">
                                         <rect key="frame" x="0.0" y="54" width="348" height="34"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                     </textField>
@@ -175,7 +177,7 @@
                         <imageReference key="selectedImage" image="shield.fill" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="welcomeTitle" destination="lSF-yM-nw9" id="F3m-nm-8Zf"/>
+                        <outlet property="welcomeLabel" destination="lSF-yM-nw9" id="D7n-XG-7n5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAb-O6-KXX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -186,7 +188,7 @@
         <!--About-->
         <scene sceneID="4eG-fo-Tn3">
             <objects>
-                <viewController id="rCj-hB-DFv" sceneMemberID="viewController">
+                <viewController id="rCj-hB-DFv" customClass="AboutViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Izt-wd-qkK">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,6 +211,9 @@
                         <imageReference key="image" image="person" catalog="system" symbolScale="large"/>
                         <imageReference key="selectedImage" image="person.fill" catalog="system" symbolScale="large"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="userImage" destination="H3K-wh-Gl0" id="l8f-Gy-6Us"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nqg-Ms-o1q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -239,7 +244,7 @@
         <!--Bank-->
         <scene sceneID="wuf-us-Mdj">
             <objects>
-                <viewController id="zB9-fR-fZJ" userLabel="Bank" sceneMemberID="viewController">
+                <viewController id="zB9-fR-fZJ" userLabel="Bank" customClass="BankViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="or3-lM-tOh">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,8 +258,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_____" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rby-J6-AyC">
-                                        <rect key="frame" x="330" y="0.0" width="66" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rby-J6-AyC">
+                                        <rect key="frame" x="352" y="0.0" width="44" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -274,10 +279,13 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="klA-sq-Ao0">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
-                                <segue destination="pYd-BD-hEf" kind="show" id="ujx-KI-J6I"/>
+                                <segue destination="pYd-BD-hEf" kind="show" identifier="showAddMoney" id="ujx-KI-J6I"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="userBalanceLabel" destination="Rby-J6-AyC" id="sEr-Bx-LJN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ul-2H-EaV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -286,13 +294,13 @@
         <!--Add money-->
         <scene sceneID="1a3-Dy-fgB">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="pYd-BD-hEf" userLabel="Add money" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="pYd-BD-hEf" customClass="AddMoneyViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eMu-Bt-qkd">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="erh-A3-c0u">
-                                <rect key="frame" x="16" y="416" width="396" height="94"/>
+                                <rect key="frame" x="16" y="378" width="396" height="170"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="240" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="wVb-hm-KQw">
                                         <rect key="frame" x="170.33333333333334" y="0.0" width="55.333333333333343" height="54"/>
@@ -313,7 +321,22 @@
                                     </stackView>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="20000" stepValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Y3a-MY-JC3">
                                         <rect key="frame" x="151" y="62" width="94" height="32"/>
+                                        <connections>
+                                            <action selector="setValueOfAddedMoney:" destination="pYd-BD-hEf" eventType="valueChanged" id="0B5-G5-wEY"/>
+                                        </connections>
                                     </stepper>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJW-cE-z2i">
+                                        <rect key="frame" x="146.33333333333334" y="102" width="103.33333333333334" height="68"/>
+                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Add">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="45"/>
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="8cf-d5-eIW" kind="unwind" unwindAction="unwindToBankVCFor:" id="Cnd-G6-yyD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -327,8 +350,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add money" id="89N-eo-Uaf"/>
+                    <connections>
+                        <outlet property="addMoneyButton" destination="QJW-cE-z2i" id="hP6-b1-TLs"/>
+                        <outlet property="addedMoneyLabel" destination="tvh-aP-fZG" id="zYO-hr-Shv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekA-73-oJD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="8cf-d5-eIW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3609.8130841121492" y="874.73002159827217"/>
         </scene>

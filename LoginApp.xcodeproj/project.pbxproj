@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A844454C2812C03B001843DC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A844454B2812C03B001843DC /* AboutViewController.swift */; };
+		A844454E2812C059001843DC /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A844454D2812C059001843DC /* BankViewController.swift */; };
+		A84445502812C065001843DC /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A844454F2812C065001843DC /* AddMoneyViewController.swift */; };
+		A84445522812C7E7001843DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84445512812C7E7001843DC /* User.swift */; };
 		A85C69632809752B005F9BC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85C69622809752B005F9BC9 /* AppDelegate.swift */; };
 		A85C69652809752B005F9BC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85C69642809752B005F9BC9 /* SceneDelegate.swift */; };
 		A85C696A2809752B005F9BC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A85C69682809752B005F9BC9 /* Main.storyboard */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A844454B2812C03B001843DC /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		A844454D2812C059001843DC /* BankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
+		A844454F2812C065001843DC /* AddMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
+		A84445512812C7E7001843DC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A85C695F2809752B005F9BC9 /* LoginApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85C69622809752B005F9BC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A85C69642809752B005F9BC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +89,9 @@
 			children = (
 				A8E181A1280AF8FF00C6A54C /* LoginViewController.swift */,
 				A8E181A3280AF91500C6A54C /* WelcomeViewController.swift */,
+				A844454B2812C03B001843DC /* AboutViewController.swift */,
+				A844454D2812C059001843DC /* BankViewController.swift */,
+				A844454F2812C065001843DC /* AddMoneyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -96,6 +107,7 @@
 		A8CB914528107AAA00905B5B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A84445512812C7E7001843DC /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,8 +195,12 @@
 			files = (
 				A8E181A2280AF8FF00C6A54C /* LoginViewController.swift in Sources */,
 				A8E181A4280AF91500C6A54C /* WelcomeViewController.swift in Sources */,
+				A844454E2812C059001843DC /* BankViewController.swift in Sources */,
 				A85C69632809752B005F9BC9 /* AppDelegate.swift in Sources */,
+				A84445522812C7E7001843DC /* User.swift in Sources */,
+				A844454C2812C03B001843DC /* AboutViewController.swift in Sources */,
 				A85C69652809752B005F9BC9 /* SceneDelegate.swift in Sources */,
+				A84445502812C065001843DC /* AddMoneyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
