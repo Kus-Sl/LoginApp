@@ -11,12 +11,12 @@ class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var welcomeLabel: UILabel!
     
-    var receivedWelcomeLabel: String!
+    var receivedUser: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        welcomeLabel.text = "Welcome, " + receivedWelcomeLabel
+        welcomeLabel.text = "Welcome, " + receivedUser.name
         
         let backgroundWelcomeVC = GradientColor()
         backgroundWelcomeVC.gradientLayer.frame = view.frame

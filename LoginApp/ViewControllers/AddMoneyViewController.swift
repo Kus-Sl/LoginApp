@@ -11,12 +11,10 @@ class AddMoneyViewController: UIViewController {
 
     @IBOutlet weak var addedMoneyLabel: UILabel!
 
-    @IBOutlet weak var addMoneyButton: UIButton!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        addMoneyButton.layer.cornerRadius = 10
+    @IBOutlet weak var addMoneyButton: UIButton! {
+        didSet {
+            addMoneyButton.layer.cornerRadius = 10
+        }
     }
 
     @IBAction func setValueOfAddedMoney(_ sender: UIStepper) {

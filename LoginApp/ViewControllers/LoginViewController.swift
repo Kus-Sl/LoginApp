@@ -12,12 +12,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
 
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton! {
+        didSet {
+            loginButton.layer.cornerRadius = 15
+        }
+    }
 
     private lazy var user = User.getUser()
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         guard let tabBarController = segue.destination as? UITabBarController
         else { return }
         guard let viewControllers = tabBarController.viewControllers
@@ -25,15 +28,12 @@ class LoginViewController: UIViewController {
 
         for viewController in viewControllers {
             if let welcomeVC = viewController as? WelcomeViewController {
-                welcomeVC.receivedWelcomeLabel = usernameTextField.text
-            }
-            if let aboutVC = viewController as? AboutViewController {
-                aboutVC.receivedUserImage = user.photo
-            }
-
-            if let navigationVC = viewController as? UINavigationController {
+                welcomeVC.receivedUser = user
+            } else if let aboutVC = viewController as? AboutViewController {
+                aboutVC.receivedUser = user
+            } else if let navigationVC = viewController as? UINavigationController {
                 if let bankVC = navigationVC.topViewController as? BankViewController {
-                    bankVC.receivedUserBalance = user.bank
+                    bankVC.receivedUser = user
                 }
             }
         }
@@ -50,14 +50,16 @@ class LoginViewController: UIViewController {
 
     @IBAction func forgotUsernameOrPasswordButtonPressed(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(title: "Correct username", message: user.username)
+        ? showAlert(title: "Correct username", message: user.name)
         : showAlert(title: "Correct password", message: user.password)
     }
 
     private func checkValidation() {
-        if usernameTextField.text != user.username
+        if usernameTextField.text != user.name
             || passwordTextField.text != user.password {
-            showAlert(title: "Invalid username or password", message: "Please, enter correct username or password")
+            showAlert(title: "Invalid username or password",
+                      message: "Please, enter correct username or password"
+            )
         }
     }
 }
@@ -89,8 +91,6 @@ extension LoginViewController: UITextFieldDelegate {
 
         usernameTextField.delegate = self
         passwordTextField.delegate = self
-
-        loginButton.layer.cornerRadius = 15
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

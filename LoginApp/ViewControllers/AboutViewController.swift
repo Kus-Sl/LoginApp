@@ -11,11 +11,11 @@ class AboutViewController: UIViewController {
     
     @IBOutlet weak var userImage: UIImageView!
 
-    var receivedUserImage: String!
+    var receivedUser: User!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        userImage.image = UIImage(named: receivedUserImage)
+        userImage.image = UIImage(named: receivedUser.photo)
     }
 }
